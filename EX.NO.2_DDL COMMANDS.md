@@ -22,53 +22,57 @@ To create a student database and execute DDL queries using SQL.
 
 ## Query:
 ### 1) Create a database studentdb
-
 ### SQL QUERY:
-
+```python
+create database student_db;
+```
 ### OUTPUT:
+![1](https://github.com/Leann4468/DBMS/assets/121165979/48c4c935-32c1-4cae-b375-e68cba5d2d3c)
 
-### 2) Create a table student  and insert any two rows with the following fieds RegisterNumber,Name,Age,Address,Phone number
 
+### 2) Create a table student with the following fieds RegisterNumber,Name,Age,Address,Phone number
 ### SQL QUERY: 
-
-
+```python
+create table student(Regno int,Name varchar(20),Age int,Address varchar(50),Phonenumber varchar(10));
+```
 ### OUTPUT:
+![2](https://github.com/Leann4468/DBMS/assets/121165979/5f248ecb-5f4c-4f71-9de8-50076e7f53b1)
 
 ### 3) Alter the above student table by adding another attribute department
-
 ### SQL QUERY: 
-
+```python
+alter table student
+add dept varchar(20);
+```
 ### OUTPUT:
+![3](https://github.com/Leann4468/DBMS/assets/121165979/b669e9f2-1fc6-4e3f-9398-8dbe9d854f9e)
 
-### 4) Rename the student table to mystudent
 
+### 4) Drop the student table
 ### SQL QUERY: 
-
-
-
+```python
+drop table student;
+```
 ### OUTPUT:
+![4](https://github.com/Leann4468/DBMS/assets/121165979/7478394a-5dbe-44af-9869-9bcc014e9c35)
 
-### 5) Delete the mystudent rows using truncate keyword
 
+### 5) Delete the student table using truncate keyword
+### SQL QUERY:
+```python
+truncate table student;
+```
+### OUTPUT:
+![5](https://github.com/Leann4468/DBMS/assets/121165979/a16962e1-e389-4947-bb93-bd2b79e3e226)
+
+### 6) Rename the student table to mystudent
 ### SQL QUERY: 
-
-
+```python
+alter table student
+rename to mystudent;
+```
 ### OUTPUT:
-### 4) Drop the mystudent table
- 
-### SQL QUERY: 
-
-
-### OUTPUT:
-
-
-
-
-
-
-
+![6](https://github.com/Leann4468/DBMS/assets/121165979/47655109-2cd5-41f3-ba1c-2a704d546eea)
 
 ## Result:
-         Thus the basic DDL commands in SQL are executed. 
-
-
+  Thus the basic DDL commands in SQL are executed. 
