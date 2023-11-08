@@ -22,59 +22,82 @@ To create a student database and execute DDL queries using SQL.
 
 ## Query:
 ### 1) Create a database studentdb
+
 ### SQL QUERY:
-```python
-create database student_db;
 ```
+Create a database studentdb;
+```
+
 ### OUTPUT:
-![1](https://github.com/Leann4468/DBMS/assets/121165979/48c4c935-32c1-4cae-b375-e68cba5d2d3c)
+![Screenshot 2023-10-18 132226](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/5a11a8aa-8b92-4438-83c9-70c99fa2f6f1)
 
 
 ### 2) Create a table student with the following fieds RegisterNumber,Name,Age,Address,Phone number
+
 ### SQL QUERY: 
-```python
-create table student(Regno int,Name varchar(20),Age int,Address varchar(50),Phonenumber varchar(10));
 ```
+ create table student(rollno int,name char(20),age int,address varchar(20),phoneno int);
+```
+
+
+
 ### OUTPUT:
-![2](https://github.com/Leann4468/DBMS/assets/121165979/5f248ecb-5f4c-4f71-9de8-50076e7f53b1)
+![Screenshot 2023-10-18 132258](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/b563cf0d-ff59-4fdf-b626-734eee9faf99)
+
 
 ### 3) Alter the above student table by adding another attribute department
+
 ### SQL QUERY: 
-```python
-alter table student
-add dept varchar(20);
 ```
+alter table student add department char(30);
+```
+
 ### OUTPUT:
-![3](https://github.com/Leann4468/DBMS/assets/121165979/b669e9f2-1fc6-4e3f-9398-8dbe9d854f9e)
+![Screenshot 2023-10-18 132314](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/934eecfe-19a6-472e-b1a3-cc6197b7e1be)
+
 
 
 ### 4) Drop the student table
+ 
 ### SQL QUERY: 
-```python
+ ```
 drop table student;
 ```
+
+
 ### OUTPUT:
-![4](https://github.com/Leann4468/DBMS/assets/121165979/7478394a-5dbe-44af-9869-9bcc014e9c35)
+![drop](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/85487739-adc7-4724-b193-a1c68232cf55)
+
 
 
 ### 5) Delete the student table using truncate keyword
-### SQL QUERY:
-```python
+
+### SQL QUERY: 
+```
 truncate table student;
 ```
+
+
 ### OUTPUT:
-![5](https://github.com/Leann4468/DBMS/assets/121165979/a16962e1-e389-4947-bb93-bd2b79e3e226)
+![truncate](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/32840a78-3656-4880-bd86-50dc5eefdb9a)
+
+
+
 
 ### 6) Rename the student table to mystudent
+
 ### SQL QUERY: 
-```python
-alter table student
-rename to mystudent;
 ```
+alter table student rename to mystudent;
+```
+
+
+
+
 ### OUTPUT:
-![6](https://github.com/Leann4468/DBMS/assets/121165979/47655109-2cd5-41f3-ba1c-2a704d546eea)
+![image](https://github.com/Lakshmipriya2005/DBMS/assets/115525361/484b8c3e-a0b0-49cd-974b-916e7e8aa739)
+
+
 
 ## Result:
-  Thus the basic DDL commands in SQL are executed. 
-
-
+         Thus the basic DDL commands in SQL are executed. 
