@@ -1,7 +1,8 @@
-# EX.NO.6 SubQueries, Views and Joins 
-### DATE
-## AIM
-### To use SubQueries, Views and Joins in SQL 
+# EX 5 SubQueries, Views and Joins 
+## DATE:
+## AIM:
+To create employee database and execute views and join subqueries.
+
 ## Create employee Table
 ```sql
 CREATE TABLE EMP (EMPNO NUMBER(4) PRIMARY KEY,ENAME VARCHAR2(10),JOB VARCHAR2(9),MGR NUMBER(4),HIREDATE DATE,SAL NUMBER(7,2),COMM NUMBER(7,2),DEPTNO NUMBER(2));
@@ -68,47 +69,54 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 ### Q1) List the name of the employees whose salary is greater than that of employee with empno 7566.
 
-
 ### QUERY:
-
+SELECT ename FROM EMP WHERE sal > (SELECT sal FROM EMP WHERE empno = 7566);
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/d011eb03-16d2-40ba-b12b-6c706d5215f9)
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
-
+SELECT ename,job,sal FROM EMP WHERE sal = (SELECT MIN(sal) FROM EMP);
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/6d95110d-5d57-458b-a0d6-62ef86bc4037)
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
-
+SELECT ename,job FROM EMP WHERE deptno = 10 AND job IN (SELECT job FROM EMP WHERE job = 'sales');
 
 ### OUTPUT:
-
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/6f0c62a7-012c-4bdf-8736-a8344f976f8a)
 
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
-
+create view empv5 as select EMPNO,ENAME,JOB from EMP where DEPTNO=10;
+SELECT * FROM empv5;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/57e2f5c5-d84e-43da-adc7-89fbe20a0364)
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
-
+create view empv30 AS select EMPNO,ENAME,SAL from EMP where DEPTNO=30;
+SELECT * FROM empv30;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/d1d9413b-8580-4a62-8ac0-84ebc4528299)
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
-
+UPDATE EMP SET sal = sal * 1.1 WHERE job = 'CLERK';
+create view empv5 as select EMPNO,ENAME,SALARY,JOB from EMP;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/560ae2f4-6091-4572-b00f-d758256ce6f2)
 
 ## Create a Customer1 Table
 ```sql
@@ -141,31 +149,41 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
-
+select s.name,c.cust_name,s.city from salesman1 s ,customer1 c where s.city=c.city;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/d90b7ec6-5e65-4ffb-b57c-60e6e40309ed)
 
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
 
-
 ### QUERY:
-
+select s.name,c.cust_name,c.city,s.commission from salesman1 s inner join customer1 c on s.city=c.city where s.commission>0.13;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/86963fe5-9a75-4a13-80a8-c6e445ddf495)
 
 ### Q9) Perform Natural join on both tables
 
 ### QUERY:
-
+ select * from salesman1 s natural join customer1 c;
 
 ### OUTPUT:
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/df702113-ef74-4770-a312-80dda632503b)
 
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY:
-
+select s.name,c.cust_name,c.city,s.commission from salesman1 s left join customer1 c on s.salesman_id=c.salesman_id;
+select s.name,c.cust_name,c.city,s.commission from salesman1 s right join customer1 c on s.salesman_id=c.salesman_id;
 
 ### OUTPUT:
+Left Join
 
-## RESULT 
-### Thus the basics of subqueries,views,joins are performed in SQL.
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/207b8766-d357-4fc3-b5e9-bc13c8971321)
+
+Right Join
+
+![image](https://github.com/Yamunaasri/EX-3-SubQueries-Views-and-Joins/assets/115707860/8e0b56a9-a857-48c6-9619-eb1ed933eb8b)
+
+### RESULT
+To create a database and implementation of views,subqueries and joins is executed successfully.
